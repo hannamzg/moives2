@@ -6,6 +6,9 @@ function Footer() {
         </span>
         <span className="mx-2">&copy;hanna mzeget</span>
         <span>{new Date().getFullYear()}</span>
+        <div onClick={()=>alert("fuckkkkkkkkkkkkkkk")}>
+            <h1>click me</h1>
+        </div>
       </footer>
     )    
 }

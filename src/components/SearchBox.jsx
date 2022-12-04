@@ -12,9 +12,6 @@ function SearchBox(props) {
             <ul style={{display:"flex",justifyContent:"start",flexDirection:"column",width:"100%"}}>
                 {props.movies.map((movie,index)=>( props.searchValue && <NavLink to="/MoviePage" key={index}> <li className="dropdown-item" key={index} style={{color:"white"}} onClick={()=> props.AddsetMoviePage(movie)}>{movie.Title}</li></NavLink>))}
             </ul>
-        <div onClick={()=>alert("fuckkkkkkkkkkkkkkk")}>
-            <h1>click me</h1>
-        </div>
         </div>
     )    
 }
