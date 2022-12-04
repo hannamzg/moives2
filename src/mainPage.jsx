@@ -25,8 +25,6 @@ function MainPage() {
       if (responsJson.Search) {
         setMovies(responsJson.Search)
       }
-   
-      
     }
       const AddsetMoviePage = (movie) =>{
         setMoviePage(movie)
