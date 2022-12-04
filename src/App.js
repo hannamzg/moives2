@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from "./mainPage";
+import Heder from "./hederComponents/heder";
+import Footer from "./footer/Footer";
 
+//  npm i react-router-dom
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    < div className="app d-flex flex-column min-vh-100"> 
+        <Heder/>
+        <MainPage />
+        <Footer/>
     </div>
+      
   );
 }
 
 export default App;
+
