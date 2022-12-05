@@ -16,7 +16,8 @@ function MainPage() {
     const [searchValue,setSearchValue] = useState('');
     const [favourites,setFavourites] = useState([]);
     const [MooviePage,setMoviePage]=useState([]);
-
+/*     const [test,setTest]=useState([])
+ */
   
     const getMoviesRequest = async()=>{
       const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=cfaf86ed`;
@@ -33,7 +34,23 @@ function MainPage() {
     useEffect(()=>{
       getMoviesRequest(searchValue);
     },)
-  
+
+
+/*  
+    const getMoviesRequest2 = async()=>{
+      const url = `http://www.omdbapi.com/?s=spider&apikey=cfaf86ed`;
+      const response = await fetch(url);
+      const responsJson = await response.json();
+      setTest(responsJson.Search)
+    }
+
+    useEffect(()=>{
+      getMoviesRequest2(test);
+      console.log(test);
+    },[searchValue])
+
+
+   */
     useEffect(() => {
           const movieFavourites = JSON.parse(
               localStorage.getItem('react-movie-app-favourites')
@@ -43,6 +60,7 @@ function MainPage() {
               setFavourites(movieFavourites);
           }
       }, []);
+
    
     const saveToLocalStorage = (items) => {
           localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
@@ -69,7 +87,7 @@ function MainPage() {
             <Route path="favourites" element={<Favourites favourites={favourites} removeFavouriteMovie={removeFavouriteMovie} RemoveFavourites={RemoveFavourites}/>} />
             <Route path="MoviePage"  element={<MoviePage arr={MooviePage}/>}/> 
         </Routes>
-
+        
         </div>
     );
   }
